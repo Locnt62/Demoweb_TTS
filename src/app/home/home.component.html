@@ -1,0 +1,39 @@
+<div class="container-fluid h-100">
+    <div class="d-none d-sm-block">
+        <form class="col-md-6 offset-2 col-xs-6" style="margin-top: 20px" name="form" #form="ngForm">
+            <div class="form-group" id="ten-sv">
+                <label for="ten-sv">Tên sinh viên:</label>
+                <input type="text" class="form-control" [(ngModel)]="form.tenKhachHang" name="name" #name="ngModel"
+                    required placeholder="Điền tên của bạn " id="input-tenKhachHang">
+                <small class="text text-danger" *ngIf="name.invalid && (name.dirty || name.touched)">Họ Tên bắt buộc
+                    phải
+                    có</small>
+            </div>
+            <div class="form-group" id="ten-sv">
+                <label for="ten-sv">Mã sinh viên:</label>
+                <input type="text" class="form-control" [(ngModel)]="form.masv" name="masv" #masv="ngModel"
+                    required placeholder="Điền mã sinh viên của bạn " id="input-tenKhachHang">
+                <small class="text text-danger" *ngIf="masv.invalid && (masv.dirty || masv.touched)">Mã sinh viên bắt buộc phải có</small>
+            </div>
+            <div class="form-group" id="ten-sv">
+                <label for="ten-sv">Lớp:</label>
+                <input type="text" class="form-control" [(ngModel)]="form.lop" name="lop" #lop="ngModel"
+                    required placeholder="Điền lớp của bạn " id="input-tenKhachHang">
+                <small class="text text-danger" *ngIf="lop.invalid && (lop.dirty || lop.touched)">Lớp bắt buộc phải có</small>
+            </div>
+            <div class="form-group" id="ten-sv">
+                <label for="ten-sv">Số điện thoại:</label>
+                <input type="text" class="form-control" [(ngModel)]="form.sdt" name="sdt" #sdt="ngModel" pattern="[0-9]{10}"
+                    required placeholder="Điền số điện thoại của bạn " id="input-tenKhachHang">
+                <small class="text text-danger" *ngIf="sdt.invalid && (sdt.dirty || sdt.touched)">Số điện thoại bắt buộc phải có 10 số</small>
+            </div>
+            <div class="form-group" id="ten-sv">
+                <label for="ten-sv">Địa chỉ:</label>
+                <input type="text" class="form-control" [(ngModel)]="form.dc" name="dc" #dc="ngModel" 
+                     placeholder="Điền số điện thoại của bạn " id="input-tenKhachHang">
+                <!-- <small class="text text-danger" *ngIf="sdt.invalid && (sdt.dirty || sdt.touched)">Số điện thoại bắt buộc phải có 10 số</small> -->
+            </div>
+         
+        </form>
+    </div>
+</div>
