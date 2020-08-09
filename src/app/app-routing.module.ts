@@ -10,6 +10,8 @@ import { ToDoComponent } from './to-do/to-do.component'
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { AgGridComponent } from './ag-grid/ag-grid.component';
+import { ListSinhVienComponent } from './list-sinh-vien/list-sinh-vien.component';
+import { SuaSinhVienComponent } from './sua-sinh-vien/sua-sinh-vien.component';
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
@@ -18,6 +20,7 @@ const routerOptions: ExtraOptions = {
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  // { path: '**', redirectTo: 'home' },
   { path: 'form', component: FormComponent },
   { path: 'pricing', component: PricingComponent },
   { path: 'carousel', component: CarouselComponent },
@@ -26,7 +29,9 @@ const routes: Routes = [
   { path: 'todo', component: ToDoComponent },
   { path: 'sidebar', component: SidebarComponent },
   { path: 'dropdown', component: DropdownComponent },
-  { path: 'ag-grid', component: AgGridComponent }
+  { path: 'ag-grid', component: AgGridComponent },
+  { path: 'ds-sinhvien', component: ListSinhVienComponent},
+  { path: 'sua-sinhvien', component: SuaSinhVienComponent}
 ];
 
 @NgModule({

@@ -35,6 +35,9 @@ import { AgGridModule} from 'ag-grid-angular';
 import { NgApexchartsModule} from 'ng-apexcharts';
 import { OpenweatherComponent } from './openweather/openweather.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ListSinhVienComponent } from './list-sinh-vien/list-sinh-vien.component';
+import { ChiTietSinhVienComponent } from './chi-tiet-sinh-vien/chi-tiet-sinh-vien.component';
+import { SuaSinhVienComponent } from './sua-sinh-vien/sua-sinh-vien.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     DropdownComponent,
     AgGridComponent,
     OpenweatherComponent,
-    NavbarComponent
+    NavbarComponent,
+    ListSinhVienComponent,
+    ChiTietSinhVienComponent,
+    SuaSinhVienComponent
 
   ],
   imports: [

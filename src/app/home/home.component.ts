@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApexAxisChartSeries, ApexChart, ApexXAxis, ApexTitleSubtitle, ChartComponent } from 'ng-apexcharts';
+import { NgForm } from '@angular/forms';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -20,6 +21,13 @@ export class HomeComponent implements OnInit {
   public hidden: boolean = true;
   public route: any;
   public fragment: any;
+  public form = {
+    tenKhachHang: '',
+    soDienThoai: '',
+    email: '',
+    diaChiKhachHang: '',
+    lop: ''
+  }
   constructor() { }
 
   ngOnInit() {
@@ -50,4 +58,10 @@ export class HomeComponent implements OnInit {
       }
     } catch (e) { }
   }
+
+
+  onSubmitForm(form: NgForm) {
+    console.log(form)
+  }
+  
 }

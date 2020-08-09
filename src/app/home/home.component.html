@@ -1,39 +1,68 @@
-<div class="container-fluid h-100">
-    <div class="d-none d-sm-block">
-        <form class="col-md-6 offset-2 col-xs-6" style="margin-top: 20px" name="form" #form="ngForm">
-            <div class="form-group" id="ten-sv">
-                <label for="ten-sv">Tên sinh viên:</label>
-                <input type="text" class="form-control" [(ngModel)]="form.tenKhachHang" name="name" #name="ngModel"
+<div class="container">
+    <div class="form">
+        <div class="title stickyTop1" style="text-align: center;">
+            <span style="font-size: 23px;font-weight: 500;">Thêm mới thông tin sinh viên</span>
+        </div>
+        <form class="col-md-8 offset-2 col-xs-4" style="margin-top: 20px" name="form" #form="ngForm"
+            (ngSubmit)="onSubmitForm(form)">
+            <div class="form-group" id="tenKhachHang">
+                <label for="" style="font-weight: 500;">Họ Tên :</label>
+                <input type=" text" class="form-control" [(ngModel)]="form.tenKhachHang" name="name" #name="ngModel"
                     required placeholder="Điền tên của bạn " id="input-tenKhachHang">
+                <div class="text-input">
+                    <!-- <span>{{form.tenKhachHang}}</span> -->
+                </div>
                 <small class="text text-danger" *ngIf="name.invalid && (name.dirty || name.touched)">Họ Tên bắt buộc
                     phải
                     có</small>
             </div>
-            <div class="form-group" id="ten-sv">
-                <label for="ten-sv">Mã sinh viên:</label>
-                <input type="text" class="form-control" [(ngModel)]="form.masv" name="masv" #masv="ngModel"
-                    required placeholder="Điền mã sinh viên của bạn " id="input-tenKhachHang">
-                <small class="text text-danger" *ngIf="masv.invalid && (masv.dirty || masv.touched)">Mã sinh viên bắt buộc phải có</small>
+            <div class="form-group">
+                <label style="font-weight: 500;">Số điện thoại:</label>
+                <input type="text" class="form-control" [(ngModel)]="form.soDienThoai" name="soDienThoai"
+                    #soDienThoai="ngModel" pattern="[0-9]{10}" placeholder="Điền số điện thoại" required>
+                <small class="text text-danger"
+                    *ngIf="soDienThoai.invalid && (soDienThoai.dirty || soDienThoai.touched)">Sô
+                    điện thoại bắt
+                    buộc phải có 10 số</small>
+                <div class="text-input">
+                    <!-- <span>{{form.soDienThoai}}</span> -->
+                </div>
             </div>
-            <div class="form-group" id="ten-sv">
-                <label for="ten-sv">Lớp:</label>
-                <input type="text" class="form-control" [(ngModel)]="form.lop" name="lop" #lop="ngModel"
-                    required placeholder="Điền lớp của bạn " id="input-tenKhachHang">
-                <small class="text text-danger" *ngIf="lop.invalid && (lop.dirty || lop.touched)">Lớp bắt buộc phải có</small>
+            <div class="form-group">
+                <label style="font-weight: 500;">Email:</label>
+                <input type="email" class="form-control" [(ngModel)]="form.email" name="email" #email="ngModel" email
+                    required placeholder="Điền email của ban">
+                <small class="text text-danger" *ngIf="email.invalid && ( email.dirty || email.touched )">Email chưa
+                    đúng.</small>
+                <div class="text-input">
+                    <!-- <span>{{form.email}}</span> -->
+                </div>
             </div>
-            <div class="form-group" id="ten-sv">
-                <label for="ten-sv">Số điện thoại:</label>
-                <input type="text" class="form-control" [(ngModel)]="form.sdt" name="sdt" #sdt="ngModel" pattern="[0-9]{10}"
-                    required placeholder="Điền số điện thoại của bạn " id="input-tenKhachHang">
-                <small class="text text-danger" *ngIf="sdt.invalid && (sdt.dirty || sdt.touched)">Số điện thoại bắt buộc phải có 10 số</small>
+            <div class="form-group">
+                <label style="font-weight: 500;">Địa chi:</label>
+                <input type="text" class="form-control" [(ngModel)]="form.diaChiKhachHang" name="diaChi"
+                    #address="ngModel" required placeholder="Điền địa chỉ của bạn">
+                <small class="text text-danger" *ngIf="address.invalid && (address.dirty || address.touched)"> Địa chỉ
+                    bắt
+                    buộc phải
+                    có.</small>
+                <div class="text-input">
+                    <!-- <span>{{form.diaChiKhachHang}}</span> -->
+                </div>
             </div>
-            <div class="form-group" id="ten-sv">
-                <label for="ten-sv">Địa chỉ:</label>
-                <input type="text" class="form-control" [(ngModel)]="form.dc" name="dc" #dc="ngModel" 
-                     placeholder="Điền số điện thoại của bạn " id="input-tenKhachHang">
-                <!-- <small class="text text-danger" *ngIf="sdt.invalid && (sdt.dirty || sdt.touched)">Số điện thoại bắt buộc phải có 10 số</small> -->
+            <div class="form-group">
+                <label style="font-weight: 500;">Lớp:</label>
+                <input type="text" class="form-control" [(ngModel)]="form.lop" name="diaChi"
+                    #class="ngModel" required placeholder="Điền lớp của bạn">
+                <small class="text text-danger" *ngIf="class.invalid && (class.dirty || class.touched)"> Lớp bắt buộc phải có.</small>
+                <div class="text-input">
+                    <!-- <span>{{form.lop}}</span> -->
+                </div>
             </div>
-         
+            <div style="text-align: center;">
+                <button type="submit" class="btn btn-primary" [disabled]="form.invalid" style="width: calc(100% - 80px)">Thêm</button>
+            </div>
         </form>
     </div>
 </div>
+

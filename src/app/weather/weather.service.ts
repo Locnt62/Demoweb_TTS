@@ -14,4 +14,10 @@ export class WeatherSevice {
         return this.http.get<any>(API)
         console.log(API)
     }
+
+
+
+    getInforWeather(cityName: string) {
+        return this.http.get<any>('https://api.openweathermap.org/data/2.5/weather?appid=b18d92e2b908f4b447d3c48791c19a24&units=metric&q=' + cityName)
+    }
 }

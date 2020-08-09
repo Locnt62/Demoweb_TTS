@@ -28,7 +28,7 @@ export class WeatherComponent implements OnInit {
 
   }
   getWeather() {
-    this.weatherService.getAll(this.txtCityName).subscribe(data => {
+    this.weatherService.getInforWeather(this.txtCityName).subscribe(data => {
       this.temp = data.main.temp;
       this.pressure = data.main.pressure;
       this.humidity = data.main.humidity;
